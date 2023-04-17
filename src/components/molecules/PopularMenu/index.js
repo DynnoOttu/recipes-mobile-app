@@ -2,19 +2,21 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { ICLike, ICSaveOn, dChikenSteak } from '../../../assets'
 
-const PopularMenu = () => {
+const PopularMenu = ({ onPress }) => {
     return (
-        <View style={styles.content}>
-            <TouchableOpacity>
-                <Image source={dChikenSteak} style={styles.image} />
-                <View style={styles.details}>
-                    <Text style={styles.menu}>Name Menu</Text>
-                    <Text style={styles.category}>Deassert</Text>
-                    <Text style={styles.name}>Person Name</Text>
-                </View>
-                <View style={styles.Icon}>
-                    <ICSaveOn style={styles.saveOn} />
-                    <ICLike style={styles.like} />
+        <View>
+            <TouchableOpacity onPress={onPress}>
+                <View style={styles.content}>
+                    <Image source={dChikenSteak} style={styles.image} />
+                    <View style={styles.details}>
+                        <Text style={styles.menu}>Name Menu</Text>
+                        <Text style={styles.category}>Deassert</Text>
+                        <Text style={styles.name}>Person Name</Text>
+                    </View>
+                    <View style={styles.Icon}>
+                        <ICSaveOn style={styles.saveOn} />
+                        <ICLike style={styles.like} />
+                    </View>
                 </View>
             </TouchableOpacity>
         </View>

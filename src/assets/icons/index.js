@@ -14,5 +14,11 @@ import ICRating from './ICRating.png'
 import ICBack from './ICBack.svg'
 import ICSaveOn from './ICSave.svg'
 import ICLike from './ICLike.svg'
+import ICNext from './ICNext.svg'
+import ICEditProfile from './ICEditProfile.svg'
+import ICMyRecipe from './ICMyRecipe'
+import ICSaveProfile from './ICSaveProfile.svg'
+import ICLikeProfile from './Vector.svg'
+import ICRemovePhoto from './ic-remove-photo.svg'
 
-export { IconLock, ICAddsActive, ICAdd, ICComment, ICHomeActive, ICProfile, ICProfileActive, ICHome, ICSoup, ICSeafood, ICChiken, ICDessert, ICRating, ICBack, ICSaveOn, ICLike };
+export { IconLock, ICAddsActive, ICAdd, ICComment, ICHomeActive, ICProfile, ICProfileActive, ICHome, ICSoup, ICSeafood, ICChiken, ICDessert, ICRating, ICBack, ICSaveOn, ICLike, ICEditProfile, ICMyRecipe, ICSaveProfile, ICLikeProfile, ICNext, ICRemovePhoto };

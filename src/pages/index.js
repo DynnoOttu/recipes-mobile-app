@@ -10,6 +10,8 @@ import Comment from './Comment';
 import Profile from './Profile';
 import Search from './Search'
 import PopularMenu from './PopularMenu';
+import DetailRecipe from './DetailRecipe';
+import EditProfile from './EditProfile';
 
 export {
   Register,
@@ -23,5 +25,7 @@ export {
   Comment,
   Profile,
   Search,
-  PopularMenu
+  PopularMenu,
+  DetailRecipe,
+  EditProfile
 };

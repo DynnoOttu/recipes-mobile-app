@@ -8,6 +8,9 @@ const Header = ({ title, onPress }) => {
         if (title === 'Popular Menu') {
             return <ICBack />
         }
+        if (title === 'Edit My Profile') {
+            return <ICBack />
+        }
     }
     return (
         <View style={styles.container}>

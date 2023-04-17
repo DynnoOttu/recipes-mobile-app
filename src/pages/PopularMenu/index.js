@@ -11,18 +11,17 @@ const PoplarMenu = ({ navigation }) => {
             <Header title={'Popular Menu'} onPress={() => navigation.goBack()} />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.content}>
-                    <TouchableOpacity>
-                        <PopularMenu />
-                        <Gap height={20} />
-                        <PopularMenu />
-                        <Gap height={20} />
-                        <PopularMenu />
-                        <Gap height={20} />
-                        <PopularMenu />
-                        <Gap height={20} />
-                        <PopularMenu />
-                        <Gap height={30} />
-                    </TouchableOpacity>
+                    <PopularMenu onPress={() => navigation.navigate('DetailRecipe')} />
+                    <Gap height={20} onPress={() => navigation.navigate('DetailRecipe')} />
+                    <PopularMenu />
+                    <Gap height={20} onPress={() => navigation.navigate('DetailRecipe')} />
+                    <PopularMenu />
+                    <Gap height={20} onPress={() => navigation.navigate('DetailRecipe')} />
+                    <PopularMenu />
+                    <Gap height={20} onPress={() => navigation.navigate('DetailRecipe')} />
+                    <PopularMenu />
+                    <Gap height={30} onPress={() => navigation.navigate('DetailRecipe')} />
+
                 </View>
             </ScrollView>
         </View>
