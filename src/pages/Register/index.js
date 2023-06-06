@@ -1,9 +1,33 @@
 import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { ImgLogin } from '../../assets';
 import { Button, Gap, Input, Link } from '../../components/atoms';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import { RegisterUser } from '../../Storage/Action/Register/register';
 
-const Register = ({ navigation }) => {
+const Register = () => {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const dispatch = useDispatch();
+  const navigation = useNavigation()
+
+  const register = useSelector((state) => state.AuthReg)
+
+  const handleRegister = () => {
+    let data = {
+      name,
+      email,
+      password
+    }
+    dispatch(RegisterUser(data, navigation))
+  }
+
+
+
   return (
     <View style={styles.pageBg}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -14,15 +38,17 @@ const Register = ({ navigation }) => {
           <Text style={styles.welcome}>Welcome!</Text>
           <Text style={styles.text}>Register to Recipe App</Text>
           <Gap height={20} />
-          <Input label="myname" />
+          <TextInput style={styles.input} placeholder='Your Name' value={name}
+            onChangeText={(e) => setName(e)} require />
           <Gap height={10} />
-          <Input label="examplexxx@gmail.com" />
+          <TextInput style={styles.input} placeholder='Your Email' value={email}
+            onChangeText={(e) => setEmail(e)} require />
           <Gap height={10} />
-          <Input label="password" />
+          <TextInput style={styles.input} placeholder='Your Password' onChangeText={(e) => setPassword(e)} value={password} secureTextEntry={true} require />
           <Gap height={10} />
           <Link title="Forgot Password ?" align="right" onPress={() => navigation.navigate('ForgotPassword')} />
           <Gap height={20} />
-          <Button title="REGISTER" />
+          <Button title="REGISTER" onPress={handleRegister} />
           <Gap height={10} />
           <Link
             onPress={() => navigation.navigate('Login')}
@@ -65,5 +91,15 @@ const styles = StyleSheet.create({
   pageBg: {
     backgroundColor: 'white',
     flex: 1,
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: '#EFC81A',
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    height: 60,
+    backgroundColor: '#F5F5F5',
+    padding: 12
   },
 });

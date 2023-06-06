@@ -1,48 +1,46 @@
 const initialState = {
-    data: null,
-    isError: null,
-    isLoading: false,
-    isSuccess: true
+  data: null,
+  isLoading: false,
+  isError: false,
+  isSuccess: true
 }
 
-
-const LoginReducers = (state = initialState, action) => {
-    switch (action.type) {
-        case "LOGIN_REQUEST":
-            return {
-                ...state,
-                data: null,
-                isError: null,
-                isLoading: true,
-                isSuccess: false
-            }
-        case 'LOGIN_SUCCESS':
-            return {
-                ...state,
-                data: action.payload,
-                isError: null,
-                isLoading: false,
-                isSuccess: true
-            }
-        case 'LOGIN_FAILURE':
-            return {
-                ...state,
-                data: null,
-                isError: action.payload,
-                isLoading: false,
-                isSuccess: false
-            }
-        case 'DELETE_TOKEN':
-            return {
-                data: null,
-                isError: false,
-                isLoading: false,
-                isSuccess: true
-            }
-        default:
-            return state
-    }
+const Auth_Login = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "LOGIN_REQUEST":
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        isSuccess: false
+      }
+    case "LOGIN_SUCCESS":
+      return {
+        ...state,
+        data: payload,
+        isLoading: false,
+        isError: false,
+        isSuccess: true
+      }
+    case "LOGIN_ERROR":
+      return {
+        ...state,
+        data: payload,
+        isLoading: false,
+        isError: true,
+        isSuccess: false
+      }
+    case "DELETE_STORE_TOKEN":
+      return {
+        ...state,
+        data: null,
+        isLoading: false,
+        isError: false,
+        isSuccess: true
+      }
+    default:
+      return state
+  }
 }
 
-
-export default LoginReducers
+export default Auth_Login;

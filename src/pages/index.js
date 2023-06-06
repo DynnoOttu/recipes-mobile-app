@@ -12,6 +12,8 @@ import Search from './Search'
 import PopularMenu from './PopularMenu';
 import DetailRecipe from './DetailRecipe';
 import EditProfile from './EditProfile';
+import MyRecipes from './MyRecipes';
+import EditRecipes from './EditRecipes';
 
 export {
   Register,
@@ -27,5 +29,7 @@ export {
   Search,
   PopularMenu,
   DetailRecipe,
-  EditProfile
+  EditProfile,
+  MyRecipes,
+  EditRecipes
 };

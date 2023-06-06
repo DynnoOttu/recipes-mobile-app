@@ -11,6 +11,9 @@ const Header = ({ title, onPress }) => {
         if (title === 'Edit My Profile') {
             return <ICBack />
         }
+        if (title === 'My Recipes') {
+            return <ICBack />
+        }
     }
     return (
         <View style={styles.container}>

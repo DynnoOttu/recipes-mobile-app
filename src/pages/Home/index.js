@@ -4,8 +4,10 @@ import { ButtomSearch, Gap } from '../../components/atoms'
 import PopularRecipes from '../../components/molecules/PopularRecipes'
 import CategoryRecipes from '../../components/molecules/CategoryRecipes'
 import PopularForYou from '../../components/molecules/PopularForYou'
+import { useDispatch } from 'react-redux'
 
 const Home = ({ navigation }) => {
+    const dispatch = useDispatch()
     return (
         <View style={styles.page}>
             <View>

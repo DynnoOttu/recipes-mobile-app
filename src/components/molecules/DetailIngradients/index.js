@@ -11,12 +11,9 @@ const DetailIngradients = ({ onPress, title, name }) => {
                     <Back onPress={onPress} />
                 </TouchableOpacity>
                 <Gap height={170} />
-                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.name}>{name}</Text>
             </ImageBackground>
-            <View style={styles.cc}>
-
-            </View>
         </View>
     )
 }
