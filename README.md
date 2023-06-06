@@ -63,7 +63,8 @@ This app was built with some technologies below:
 Before going to the installation stage there are some software that must be installed first.
 
 - [NodeJs](https://nodejs.org/en/download/)
-- - [React Native](https://reactnative.dev/)
+- [React Native](https://reactnative.dev/)
+- [Android Studio](https://developer.android.com/studio/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -90,8 +91,8 @@ npm install
 ```
 
 - <a href="#setup-env">Setup .env</a>
-- Type ` npm run dev` To Start Website
-- Type ` npm run start` To Start Production
+- Type ` npx react-native start` To Start Metro
+- Type ` npx react-native run-androind` To Start App
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
