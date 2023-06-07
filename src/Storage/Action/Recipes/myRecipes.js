@@ -1,7 +1,7 @@
 import axios from "axios";
 const url = `${process.env.REACT_APP_BASE_URL}`;
 
-const MyRecipes = (token) => async (dispatch) => {
+const MyRecipesAction = (token) => async (dispatch) => {
     try {
         dispatch({ type: 'MY_RECIPES_REQUEST' })
         const result = await axios.get(`${url}/recipes/my-recipe`, {
@@ -22,4 +22,4 @@ const MyRecipes = (token) => async (dispatch) => {
 }
 
 
-export default MyRecipes
+export default MyRecipesAction

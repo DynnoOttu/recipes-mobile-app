@@ -6,16 +6,17 @@ const initialState = {
 }
 
 
-const RecipeReducer = (state = initialState, action) => {
+const DeleteRecipeReducers = (state = initialState, action) => {
     switch (action.type) {
-        case "RECIPES_REQUEST":
+        case "DELETE_RECIPES_REQUEST":
             return {
                 ...state,
+                data: [],
                 isError: null,
                 isLoading: true,
                 isSuccess: false
             }
-        case 'RECIPES_SUCCESS':
+        case 'DELETE_RECIPES_SUCCESS':
             return {
                 ...state,
                 data: action.payload,
@@ -23,7 +24,7 @@ const RecipeReducer = (state = initialState, action) => {
                 isLoading: false,
                 isSuccess: true
             }
-        case 'RECIPES_FAILURE':
+        case 'DELETE_RECIPES_FAILED':
             return {
                 ...state,
                 data: [],
@@ -37,4 +38,4 @@ const RecipeReducer = (state = initialState, action) => {
 }
 
 
-export default RecipeReducer
+export default DeleteRecipeReducers

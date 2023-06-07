@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Alert } from 'react-native'
 import Header from '../../components/molecules/Header'
-import { ImgChikenSteak, ImgDessert, ImgSeafood, ImgSpaghetti } from '../../assets/ilustration'
-import { Button, Gap } from '../../components/atoms'
+import { Gap } from '../../components/atoms'
 import { useNavigation } from '@react-navigation/native'
 import MyRecipesAction from '../../Storage/Action/Recipes/myRecipes'
 import DetailRecipes from '../../Storage/Action/Recipes/detailRecipes'
+import DeleteRecipesAction from '../../Storage/Action/Recipes/deleteRecipes'
 
 
 const MyRecipes = () => {
@@ -17,6 +17,7 @@ const MyRecipes = () => {
 
     const token = useSelector(state => state.Auth_Login.data)
 
+
     useEffect(() => {
         dispatch(MyRecipesAction(token.token))
     }, [dispatch])
@@ -24,8 +25,10 @@ const MyRecipes = () => {
 
     const handlePress = (id) => {
         dispatch(DetailRecipes(id))
+        console.log("ID RECIPESS", id)
         navigation.navigate('EditRecipes', { id: id })
     }
+
 
     const showAlert = (id) => {
         Alert.alert(
@@ -63,7 +66,7 @@ const MyRecipes = () => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {data?.map((item) => {
                         return (
-                            <View style={styles.content} key={item.id}>
+                            <View style={styles.content}>
                                 <Image source={{ uri: `${item.photo}` }} style={styles.image} />
                                 <View style={styles.details}>
                                     <Text style={styles.menu}>{item.title}</Text>
@@ -75,7 +78,7 @@ const MyRecipes = () => {
                                         <Text style={styles.edit}>Edit</Text>
                                     </TouchableOpacity>
                                     <Gap height={10} />
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => showAlert(item.id)}>
                                         <Text style={styles.hapus}>Delete</Text>
                                     </TouchableOpacity>
                                 </View>

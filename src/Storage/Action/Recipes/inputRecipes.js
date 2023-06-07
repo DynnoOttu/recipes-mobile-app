@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const url = `${process.env.REACT_APP_BASE_URL}`;
 
 const InputRecipes = (formData, token, navigation) => async (dispatch) => {
@@ -10,10 +11,10 @@ const InputRecipes = (formData, token, navigation) => async (dispatch) => {
                 "Content-Type": "multipart/form-data",
                 "Authorization": `Bearer ${token}`
             }
-        },)
+        }, pesan('data is being processed'))
         const menu = result.data
         dispatch({ type: 'INSERT_RECIPES_SUCCESS', payload: menu })
-        navigation.navigate('PopularMenu')
+        navigation.navigate('MyRecipes')
     } catch (error) {
         dispatch({
             type: 'INSERT_RECIPES_FAILED',

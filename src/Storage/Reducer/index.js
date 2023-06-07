@@ -5,6 +5,7 @@ import RecipeReducers from './Recipes/recipesReduc';
 import DetailReducers from './Recipes/detailReduc';
 import InputReducers from './Recipes/inputReduc';
 import MyRecipeReducers from './Recipes/myRecipesReduc';
+import EditRecipeReducers from './Recipes/editRecipesReduc';
 
 const appReducers = combineReducers({
   Auth_Login: Auth_Login,
@@ -12,7 +13,9 @@ const appReducers = combineReducers({
   recipes: RecipeReducers,
   DetailReducers: DetailReducers,
   InputReducers: InputReducers,
-  MyRecipeReducers: MyRecipeReducers
+  MyRecipeReducers: MyRecipeReducers,
+  EditRecipeReducers: EditRecipeReducers
+
 });
 
 export default appReducers;
